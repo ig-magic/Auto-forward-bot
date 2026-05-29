@@ -234,7 +234,7 @@ async def forward(user, bot, msg, m, sts, protect):
 
 async def msg_edit(msg, text, button=None, wait=None):
     try:
-        return await msg.edit(text, reply_markup=button)
+        return await msg.edit(text, reply_markup=button, disable_web_page_preview=True)
     except MessageNotModified:
         pass 
     except FloodWait as e:
